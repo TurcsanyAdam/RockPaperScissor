@@ -20,6 +20,6 @@ const sock = io();
 sock.on('message', writeEvent);
 
 document
-    .querySelector('#chat-form')
-    .addEventListener('submit', onFormSubmitted);
+  .querySelector('#chat-form')
+  .addEventListener('submit', onFormSubmitted);
 
