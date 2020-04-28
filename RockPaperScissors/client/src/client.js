@@ -16,7 +16,7 @@ const onFormSubmitted = (e) => {
 };
 writeEvent('Welcome to RSP');
 
-const sock = io();
+const sock = io('http://195.168.0.105:8080');
 sock.on('message', writeEvent);
 
 document
