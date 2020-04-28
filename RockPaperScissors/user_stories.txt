@@ -1,0 +1,19 @@
+User stories
+
+Show if an opponent is available or still searching:
+Notify the player with a message when an opponent is ready for play
+
+Base game rules should apply:
+- rock beats scrissors
+- scissors beat paper
+- paper beats rock
+
+Pick choice with button:
+A button should be available for all 3 choices.
+
+Show the player's pick:
+Only the player's pick should be visible, until his opponent made his choice.
+
+Show outcome:
+After both players picked for the round, the outcome should be announced for both parties,
+with their respective picks.
