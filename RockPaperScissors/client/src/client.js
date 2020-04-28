@@ -30,7 +30,7 @@ const addButtonListeners = () => {
 
 writeEvent('Welcome to RPS');
 
-const sock = io('http://195.168.0.105:8080');
+const sock = io();
 sock.on('message', writeEvent);
 
 document
