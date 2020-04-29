@@ -3,6 +3,8 @@ class RpsGame {
     constructor(p1, p2) {
         this._players = [p1, p2];
         this._turns = [null, null];
+        this.p1Wins = 0;
+        this.p2Wins = 0;
 
         this._sendToPlayers('Rock Paper Scissors Starts!');
 
@@ -60,22 +62,26 @@ class RpsGame {
         switch (distance) {
             case 0:
                 this._sendToPlayers('Draw!');
+                this._sendToPlayers(`Current standing: Player 1: ${this.p1Wins} win(s) --- Player 2: ${this.p2Wins} win(s)`);
                 break;
 
             case 1:
+                this.p1Wins += 1;
                 this._sendWinMessage(this._players[0], this._players[1]);
+                this._sendToPlayers(`Current standing: Player 1: ${this.p1Wins} win(s) --- Player 2: ${this.p2Wins} win(s)`);
                 break;
 
             case 2:
-                this._sendWinMessage(this._players[1], this._players[0]);
+                this.p2Wins += 1;
+                this._sendWinMessage(this._players[1], this._players[0]);         
+                this._sendToPlayers(`Current standing: Player 1: ${this.p1Wins} win(s) --- Player 2: ${this.p2Wins} win(s)`);
                 break;
         }
     }
 
     _sendWinMessage(winner, loser) {
-        winner.emit('message', 'You won!');
-        loser.emit('message', 'You lost.');
-        
+        winner.emit('message', `You won!`);
+        loser.emit('message', 'You lost!');
     }
 
     _decodeTurn(turn) {
