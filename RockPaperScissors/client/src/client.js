@@ -17,6 +17,7 @@ const onFormSubmitted = (e) => {
     input.value = '';
 
     sock.emit('message', text);
+    
 };
 
 const addButtonListeners = () => {
