@@ -1,4 +1,39 @@
 ﻿body {
-    background-color: mintcream;
+    background-color: rgb(209, 243, 255);
+    text-align: center;
+}
 
+button {
+    border: 0;
+    background-size: 60px 60px;
+    height: 60px;
+    width: 60px;
+    margin: 15px 3px;
+}
+
+#scissors {
+    background-image: url(scissors.jpg);
+}
+
+#rock {
+    background-image: url(rock.jpg);
+}
+
+#paper {
+    background-image: url(paper.jpg);
+}
+
+#say {
+    background-image: url(chat.jpg);
+}
+
+.rps-wrapper {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+input {
+    width: 100%;
 }
