@@ -37,5 +37,5 @@ server.on('error', (err) => {
 });
 
 server.listen(3000, () => {
-    console.log('RPS started on 8080');
+    console.log('RPS started on 3000');
 });
