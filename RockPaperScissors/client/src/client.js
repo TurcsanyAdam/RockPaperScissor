@@ -1,3 +1,5 @@
+src = "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
+
 const writeEvent = (text) => {
     // <ul> element
     const parent = document.querySelector('#events');
@@ -8,6 +10,7 @@ const writeEvent = (text) => {
 
     parent.appendChild(el);
 };
+
 
 const onFormSubmitted = (e) => {
     e.preventDefault();
@@ -25,9 +28,26 @@ const addButtonListeners = () => {
         const button = document.getElementById(id);
         button.addEventListener('click', () => {
             sock.emit('turn', id);
+            button.value = 'true';
+            ButtonValue(id);
         });
+
+        
     });
 };
+
+function ButtonValue(id){
+    
+    const button = document.getElementById(id);
+    if (button.value == "true") {
+        $('button[id^="rock"]').prop('disabled', true);
+        $('button[id^="paper"]').prop('disabled', true);
+        $('button[id^="scissors"]').prop('disabled', true);
+    }
+    
+};
+
+
 
 writeEvent('Welcome to RPS');
 
@@ -39,3 +59,5 @@ document
     .addEventListener('submit', onFormSubmitted);
 
 addButtonListeners();
+RemoveDisable();
+

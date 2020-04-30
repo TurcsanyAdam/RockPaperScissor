@@ -14,6 +14,7 @@ class RpsGame {
             });
         });
     }
+    
 
     _sendToPlayer(playerIndex, msg) {
         this._players[playerIndex].emit('message', msg);
@@ -25,16 +26,19 @@ class RpsGame {
         });
     }
 
+
     _onTurn(playerIndex, turn) {
         this._turns[playerIndex] = turn;
         this._sendToPlayer(playerIndex, `You selected ${turn}`);
-
         this._checkGameOver();
+        
     }
 
+   
     _checkGameOver() {
-        const turns = this._turns;
         
+        
+          
         
         
         if (turns[0] && turns[1]) {
@@ -47,10 +51,14 @@ class RpsGame {
                 this._sendToPlayers('Game over ' + turns.join(' : '));
                 this._getGameResult();
                 this._turns = [null, null];
-                this._sendToPlayers('Next Round!!!!');}, 5000);
+                this._sendToPlayers('Next Round!!!!');
+            }, 5000);
             
             
         }
+
+        
+
     }
 
     _getGameResult() {
