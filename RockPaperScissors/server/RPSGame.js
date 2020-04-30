@@ -34,22 +34,23 @@ class RpsGame {
 
     _checkGameOver() {
         const turns = this._turns;
-        setTimeout(() => {
+        
+        
+        
+        if (turns[0] && turns[1]) {
 
-            if (turns[0] && turns[1]) {
+            setTimeout(() => { this._sendToPlayers("3"); }, 1000);
+            setTimeout(() => { this._sendToPlayers("2"); }, 2000);
+            setTimeout(() => { this._sendToPlayers("1"); }, 3000);
+            setTimeout(() => { this._sendToPlayers("GO!"); }, 4000);
+            setTimeout(() => {
                 this._sendToPlayers('Game over ' + turns.join(' : '));
                 this._getGameResult();
                 this._turns = [null, null];
-                this._sendToPlayers('Next Round!!!!');
-            }
-
-        }, 2000);
-        //if (turns[0] && turns[1]) {
-        //    this._sendToPlayers('Game over ' + turns.join(' : '));
-        //    this._getGameResult();
-        //    this._turns = [null, null];
-        //    this._sendToPlayers('Next Round!!!!');
-        //}
+                this._sendToPlayers('Next Round!!!!');}, 5000);
+            
+            
+        }
     }
 
     _getGameResult() {
